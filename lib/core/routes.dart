@@ -1,35 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:lingopanda_assignment/screens/authentication/view/authentication_screen.dart';
+import 'package:lingopanda_assignment/screens/authentication/view/authentications_screen.dart';
 import 'package:lingopanda_assignment/screens/home/view/home_screen.dart';
 import 'package:lingopanda_assignment/screens/splash/view/splash_screen.dart';
+import 'package:lingopanda_assignment/screens/splash/viewmodel/splashscreen_viewmodel.dart';
+import 'package:provider/provider.dart';
 
 class AppRoutes {
-  static const String splash = "/splash";
-  static const String authentication = "/authentication";
-  static const String home = "/login";
-
   static Route? onGenerateRoute(RouteSettings routeSettings) {
+    debugPrint("123 ${routeSettings.name}");
+
     switch (routeSettings.name) {
-      case splash:
+      case SplashScreen.routeName:
         return MaterialPageRoute(
           builder: (context) => const SplashScreen(),
         );
 
-      case authentication:
+      case AuthenticationScreen.routeName:
+        final AuthenticationScreenType type = (routeSettings.arguments as AuthenticationScreenType?) ?? AuthenticationScreenType.signup;
         return MaterialPageRoute(
-          builder: (context) => const AuthenticationScreen(),
+          builder: (context) => AuthenticationScreen(
+            screenType: type,
+          ),
         );
 
-      case home:
+      case HomeScreen.routeName:
         return MaterialPageRoute(
           builder: (context) => const HomeScreen(),
         );
 
       default:
         // This case should not appear but still added for safety
-        return MaterialPageRoute(
-          builder: (context) => const SplashScreen(),
-        );
+        return null;
     }
   }
 }

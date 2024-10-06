@@ -30,6 +30,10 @@ environment:
 dependencies:
   cupertino_icons: ^1.0.6
   firebase_auth: ^5.2.0
+  dio: ^5.7.0
+  pretty_dio_logger: ^1.4.0
+  firebase_remote_config:
+  cloud_firestore:
   firebase_core: null
   flutter:
     sdk: flutter

@@ -1,6 +1,6 @@
-# Internship Assignment For LingoPanda (E-Shop)
+# Assignment For LingoPanda (E-Shop)
 
-I created the required Internship Assignment with Flutter as a front-end client and MVVM pattern for application design because it helps in separating the data, logic, and the UI part. I have also implemented Provider for the app's State Management which is an effective way of managing the state.
+I have created the required Assignment with Flutter as a front-end client and MVVM pattern for application design because it helps in separating the data, logic, and the UI part. I have also implemented Provider for the app's State Management which is an effective way of managing the state. I have also integrated Firebase auth, Firebase realstore and Firebase remote config for required features.
 
 Improvements which could have been added
 1) Splash Screen
